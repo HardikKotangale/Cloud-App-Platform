@@ -1,0 +1,8 @@
+name: demo-nginx
+namespace: demo
+image: nginx:1.25
+port: 80
+replicas: 2
+resources:
+  cpu: "250m"
+  memory: "256Mi"
