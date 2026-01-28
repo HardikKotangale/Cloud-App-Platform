@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/HardikKotangale/cloud-app-platform/internal/spec"
+	"github.com/HardikKotangale/Cloud-App-Platform/internal/spec"
 )
 
 func Validate(a *spec.AppSpec) []string {

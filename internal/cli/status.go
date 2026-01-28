@@ -3,7 +3,7 @@ package cli
 import (
 	"fmt"
 
-	"github.com/HardikKotangale/cloud-app-platform/internal/kube"
+	"github.com/HardikKotangale/Cloud-App-Platform/internal/kube"
 	"github.com/spf13/cobra"
 )
 

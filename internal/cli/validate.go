@@ -3,8 +3,9 @@ package cli
 import (
 	"fmt"
 
-	"github.com/HardikKotangale/cloud-app-platform/internal/spec"
-	"github.com/HardikKotangale/cloud-app-platform/internal/validator"
+	"github.com/HardikKotangale/Cloud-App-Platform/internal/spec"
+	"github.com/HardikKotangale/Cloud-App-Platform/internal/validator"
+	"github.com/HardikKotangale/Cloud-App-Platform/internal/observability"
 	"github.com/spf13/cobra"
 )
 
@@ -23,6 +24,7 @@ func NewValidateCmd() *cobra.Command {
 
 			issues := validator.Validate(app)
 			if len(issues) > 0 {
+				_ = observability.IncPolicyViolations(int64(len(issues)))
 				fmt.Println("❌ Validation failed:")
 				for _, is := range issues {
 					fmt.Printf("  - %s\n", is)
